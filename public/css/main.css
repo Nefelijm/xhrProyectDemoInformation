@@ -1,5 +1,36 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+h1{
+text-align: center;
+margin-top: 5%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 40px;
+}
 .bg-container{
- background-color: rgb(252, 139, 64);
+ background-color: rgb(144, 74, 190);
  height: 50px;
  width: 450px;
+ margin-left: auto;
+ margin-right: auto;
+ font-family: 'Times New Roman', Times, serif;
+ font-size: 20px;
+}
+
+body{
+background-color: rgb(190, 117, 74);
+}
+
+li{
+margin: 2%;
+background-color: rgb(188, 57, 240);
+font-size: 20px;
+border: 1px solid black;
+
+}
+
+a{
+margin-left: 3%;
 }

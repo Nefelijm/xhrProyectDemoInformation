@@ -34,22 +34,24 @@ console.log('Se ha presentado un error');
 
 function addNews(){
  const data = JSON.parse(this.responseText);
-
  const information = data.response.docs;
-
-    console.log(information);
+		console.log(information);
+		//Recorrer la data
     information.forEach(function (article) {
+		//Porpiedades que utilizaremos de la data
         const snippet = article.snippet;
         const page = article.print_page;
         const url = article.web_url; 
         console.log(url)       
 
+		//Manipulacion del DOM
         let a = document.createElement('a');
         let p = document.createElement('p');
         let li = document.createElement('li');        
         const div = document.getElementById('response');
-        const ul = document.getElementById('response-container');
-
+				const ul = document.getElementById('response-container');
+				
+		//Agregando al dom
         a.setAttribute('href', url);
         a.innerText = 'link';
         p.innerText = page;
