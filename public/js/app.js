@@ -36,30 +36,37 @@ function addNews(){
  const data = JSON.parse(this.responseText);
  const information = data.response.docs;
 		console.log(information);
-		//Recorrer la data
+		// //Recorrer la data
     information.forEach(function (article) {
 		//Porpiedades que utilizaremos de la data
         const snippet = article.snippet;
         const page = article.print_page;
-        const url = article.web_url; 
-        console.log(url)       
+				const link = article.web_url;
+				const image = article.multimedia[7].url;
+				console.log(image);
+		      
 
 		//Manipulacion del DOM
+		    let img = document.createElement('img');
         let a = document.createElement('a');
         let p = document.createElement('p');
         let li = document.createElement('li');        
         const div = document.getElementById('response');
-				const ul = document.getElementById('response-container');
+		    const ul = document.getElementById('response-container');
 				
 		//Agregando al dom
-        a.setAttribute('href', url);
-        a.innerText = 'link';
-        p.innerText = page;
-        li.innerText = snippet;
-        li.appendChild(a);
-        li.appendChild(p);
-        ul.appendChild(li);
-        div.appendChild(ul);       
+				img.setAttribute('src', `https://static01.nyt.com/${image}`)
+				img.className = 'image';
+				a.setAttribute('href', link);
+        a.innerText = 'enlace';
+        p.innerText = page; 			 			
+			
+				div.appendChild(ul);  
+				 ul.appendChild(li); 
+			  li.innerText = snippet;
+			  li.appendChild(img);
+			  li.appendChild(p);
+			  li.appendChild(a);    
 
     });
 

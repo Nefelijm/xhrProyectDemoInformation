@@ -33,4 +33,11 @@ border: 1px solid black;
 
 a{
 margin-left: 3%;
+display: block;
+}
+
+.image{
+    width: 100px;
+    height: 80px;
+    display: block;
 }
